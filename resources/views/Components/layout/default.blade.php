@@ -8,9 +8,9 @@ use App\Http\Controllers\HomeController;
     <!-- Meta tags SEO -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ofertas incríveis no portal de produtos e serviços! Descubra cursos, e-books e muito mais. Aproveite promoções exclusivas e otimize seu aprendizado.">
-    <meta name="keywords" content="ofertas, produtos, serviços, cursos, e-books, promoções">
-    <meta name="author" content="Seu Portal">
+    <meta name="description" content="Encontre o conteúdo que você procura de forma gratuita!">
+    <meta name="keywords" content="gratuitos, produtos, serviços, cursos, e-books, conteúdos">
+    <meta name="author" content="Saberlink">
     
     <!-- Título da página -->
     <title>{{$pageTitle}}</title>
@@ -23,6 +23,9 @@ use App\Http\Controllers\HomeController;
     <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="{/{asset('css/bootstrap.css')}}">-->
+
+    <!-- Link Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- Styles customizados -->
     <style>
@@ -66,6 +69,12 @@ use App\Http\Controllers\HomeController;
             <li class="nav-item">
                 <x-nav-link href="/sobre" :active="request()->is('sobre')">Sobre</x-nav-link>
             </li>
+            <li>
+                <x-nav-link type="button" href="/login" :active="request()->is('login')">Login</x-nav-link>
+            </li>
+            <li>
+                <x-nav-link type="button" href="/register" :active="request()->is('register')">Registrar</x-nav-link>
+            </li>
             </ul>
         </div>
         </nav>
@@ -75,7 +84,7 @@ use App\Http\Controllers\HomeController;
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; {{ date('Y') }} Seu Portal. Todos os direitos reservados.</p>
+            <p>&copy; {{ date('Y') }} SaberLink. Todos os direitos reservados.</p>
         </div>
     </footer>
 
