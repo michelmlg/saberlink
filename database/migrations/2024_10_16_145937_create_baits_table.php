@@ -12,12 +12,17 @@ return new class extends Migration
             $table->bigIncrements('id_bait');
             $table->string('nm_title');
             $table->text('ds_bait');
-            $table->foreignId('id_category')->constrained('tb_iscas_categories');
             $table->text('txt_body');
             $table->string('img_path');
             $table->string('nm_slug');
             $table->timestamp('dt_creation')->useCurrent();
             $table->timestamps();
+            $table->unsignedBigInteger('id_category'); 
+            $table->unsignedBigInteger('id_user'); 
+
+            $table->foreign('id_category')->references('id_category')->on('tb_iscas_categories');
+            $table->foreign('id_user')->references('id_user')->on('tb_users');
+            
         });
     }
 

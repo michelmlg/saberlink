@@ -9,15 +9,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tb_users', function (Blueprint $table) {
-            $table->bigIncrements('id_user');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->foreignId('id_privilege')->constrained(
-                table: 'tb_privileges', indexName: 'id_privilege'
-            );
-            $table->timestamps();
-        });
+            $table->unsignedBigInteger('id_privilege'); 
+
+            
+            $table->foreign('id_privilege')->references('id_privilege')->on('tb_privileges')->onDelete('cascade');
+        }); 
     }
 
     public function down()
