@@ -56,6 +56,28 @@
         </div>
     </section>
 
+    <!-- Seção de Prova Social (Depoimentos) -->
+    <section class="testimonials">
+        <div class="container text-center">
+            <h2>O Que Nossos Clientes Dizem</h2>
+            <p class="lead">Mais de 20.000 pessoas já utilizaram nossos produtos para alcançar resultados reais. Veja o que elas estão dizendo:</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="testimonial">"Este curso mudou minha vida profissional! Aprendi mais em 3 meses do que em anos de prática."</p>
+                    <p class="testimonial-author">- João Silva</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"O e-book é completo e repleto de insights valiosos. Recomendo para todos os profissionais."</p>
+                    <p class="testimonial-author">- Maria Fernandes</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="testimonial">"Com a ferramenta de produtividade, consegui dobrar minha eficiência no trabalho em poucas semanas!"</p>
+                    <p class="testimonial-author">- Paulo Costa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção de Call to Action -->
     <section class="bg-primary text-white py-5 text-center">
         <h2>Não perca tempo!</h2>
