@@ -14,6 +14,9 @@ return new class extends Migration
             $table->string('nm_title');
             $table->text('ds_bait');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id_user')->on('tb_users')->onDelete('cascade');
+            $table->foreign('id_bait')->references('id_bait')->on('tb_baits')->onDelete('cascade');
         });
     }
 
