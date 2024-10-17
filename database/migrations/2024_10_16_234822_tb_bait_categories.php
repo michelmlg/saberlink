@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('tb_iscas_categories', function (Blueprint $table) {
+        Schema::create('tb_bait_categories', function (Blueprint $table) {
             $table->bigIncrements('id_category');
             $table->string('nm_category');
             $table->timestamps();
@@ -17,6 +17,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('tb_iscas_categories');
+        Schema::dropIfExists('tb_bait_categories');
     }
 };

@@ -12,3 +12,7 @@ Route::get('/destaques', function () {
 Route::get('/sobre', function () {
     return view('sobre');
 });
+
+Route::get('/login', function () {
+    return view('userlogin');
+});

@@ -2,71 +2,68 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Authenticatable
 {
-    protected $table = 'tb_users';
-    protected $fillable = ['name', 'email', 'password', 'id_privilege'];
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
 
-    public function privilege()
-    {
-        return $this->belongsTo(Privilege::class, 'id_privilege');
-    }
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 
-    public function baits()
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
     {
-        return $this->belongsToMany(Bait::class, 'tb_users_baits', 'id_user', 'id_bait')
-                    ->withPivot('nm_title', 'ds_bait')
-                    ->withTimestamps();
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
     }
 }
 
 
 
-// namespace App\Models;
+// use Illuminate\Database\Eloquent\Model;
 
-// // use Illuminate\Contracts\Auth\MustVerifyEmail;
-// use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Illuminate\Foundation\Auth\User as Authenticatable;
-// use Illuminate\Notifications\Notifiable;
-
-// class User extends Authenticatable
+// class User extends Model
 // {
-//     /** @use HasFactory<\Database\Factories\UserFactory> */
-//     use HasFactory, Notifiable;
+//     protected $table = 'tb_users';
+//     protected $fillable = ['name', 'email', 'password', 'id_privilege'];
 
-//     /**
-//      * The attributes that are mass assignable.
-//      *
-//      * @var array<int, string>
-//      */
-//     protected $fillable = [
-//         'name',
-//         'email',
-//         'password',
-//     ];
-
-//     /**
-//      * The attributes that should be hidden for serialization.
-//      *
-//      * @var array<int, string>
-//      */
-//     protected $hidden = [
-//         'password',
-//         'remember_token',
-//     ];
-
-//     /**
-//      * Get the attributes that should be cast.
-//      *
-//      * @return array<string, string>
-//      */
-//     protected function casts(): array
+//     public function privilege()
 //     {
-//         return [
-//             'email_verified_at' => 'datetime',
-//             'password' => 'hashed',
-//         ];
+//         return $this->belongsTo(Privilege::class, 'id_privilege');
+//     }
+
+//     // Um usuário pode ter várias iscas (baits)
+//     public function baits()
+//     {
+//         return $this->hasMany(Bait::class, 'id_user'); // Relacionamento 1:N
 //     }
 // }

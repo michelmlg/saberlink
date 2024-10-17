@@ -17,12 +17,14 @@ return new class extends Migration
             $table->string('nm_slug');
             $table->timestamp('dt_creation')->useCurrent();
             $table->timestamps();
-            $table->unsignedBigInteger('id_category'); 
-            $table->unsignedBigInteger('id_user'); 
 
-            $table->foreign('id_category')->references('id_category')->on('tb_iscas_categories');
-            $table->foreign('id_user')->references('id_user')->on('tb_users');
-            
+            $table->unsignedBigInteger('id_category');
+            $table->unsignedBigInteger('id_user');
+
+            // Foreign keys
+            $table->foreign('id_category')->references('id_category')->on('tb_bait_categories')->onDelete('cascade');
+            // Referenciando a coluna id da tabela users
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BaitCategory extends Model
 {
-    protected $table = 'tb_iscas_categories';
+    protected $table = 'tb_bait_categories'; // Tabela renomeada conforme a migration
     protected $fillable = ['nm_category'];
 
     public function baits()
