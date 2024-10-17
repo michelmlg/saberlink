@@ -14,13 +14,16 @@ Route::get('/sobre', function () {
 });
 
 Route::get('/login', function () {
-    return view('userlogin');
+    return view('auth.login');
 });
 Route::get('/register', function () {
-    return view('userregister');
+    return view('auth.register');
+});
+Route::post('/register', function () {
+
 });
 
 Route::get('/esqueci-senha', function () {
-    return view('userforgetpass');
+    return view('auth.forget-pass');
 });
 

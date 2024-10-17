@@ -33,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function privilege()
+    {
+        return $this->belongsTo(Privilege::class, 'id_privilege');
+    }
+
     /**
      * Get the attributes that should be cast.
      *
