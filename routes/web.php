@@ -16,3 +16,11 @@ Route::get('/sobre', function () {
 Route::get('/login', function () {
     return view('userlogin');
 });
+Route::get('/register', function () {
+    return view('userregister');
+});
+
+Route::get('/esqueci-senha', function () {
+    return view('userforgetpass');
+});
+
