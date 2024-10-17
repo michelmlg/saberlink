@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bait;
+
 abstract class Controller
 {
-    //
+    
 }
 
 

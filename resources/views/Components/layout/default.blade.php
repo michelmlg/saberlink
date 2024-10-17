@@ -72,7 +72,7 @@ use App\Http\Controllers\HomeController;
                 <x-nav-link href="/sobre" :active="request()->is('sobre')">Sobre</x-nav-link>
             </li>
             <li>
-                <x-nav-link  href="/login" :active="request()->is('login')">Login</x-nav-link>
+                <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
             </li>
             <li>
                 <x-nav-link href="/register" :active="request()->is('register')">Registrar</x-nav-link>

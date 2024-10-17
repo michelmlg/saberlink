@@ -69,7 +69,7 @@
         <div class="hero-section"></div>
         <div class="overlay"></div> <!-- Adicionando o overlay -->
 
-        <div class="card-container ms-5">
+        <div class="card-container">
             <div class="card">
                 <div class="card-title fw-bold text-center"><h2>Login</h2></div> <!-- Removido <b> -->
 

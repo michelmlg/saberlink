@@ -77,7 +77,7 @@
                     <i class="fa-brands fa-google"></i>
                     Entrar com Google
                 </button>
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="/register">
                   <div class="mb-3 mt-2">
                         <label for="nome" class="form-label fw-bold">Nome</label>
                         <input type="nome" class="form-control" id="name" placeholder="Digite seu nome">
