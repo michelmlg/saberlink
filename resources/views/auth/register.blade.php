@@ -77,18 +77,19 @@
                     <i class="fa-brands fa-google"></i>
                     Entrar com Google
                 </button>
-                <form method="POST" action="/register">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
                   <div class="mb-3 mt-2">
-                        <label for="nome" class="form-label fw-bold">Nome</label>
-                        <input type="nome" class="form-control" id="name" placeholder="Digite seu nome">
+                        <label for="name" class="form-label fw-bold">Nome</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Digite seu nome">
                     </div>
                     <div class="mb-3 mt-2">
                         <label for="email" class="form-label fw-bold">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fw-bold">Senha</label>
-                        <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                        <input type="password" class="form-control"  name="password" id="password" placeholder="Digite sua senha">
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mb-4 mt-4">Entrar</button>
                 </form>

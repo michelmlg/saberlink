@@ -27,36 +27,20 @@ use App\Http\Controllers\HomeController;
     <!-- Link Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- Styles customizados -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero-section {
-            background-image: url('/images/hero-bg.jpg');
-            background-size: cover;
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-        .cta-button {
-            background-color: #ff5733;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        
-    </style>
-
+    <!-- JavaScript do Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <!--<script src="{/{ asset('js/bootstrap.min.js') }}"></script>-->
 
 </head>
 <body>
     <!-- Header da página -->
     <nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">SaberLink</a>
+        <img src="https://unisantabr-my.sharepoint.com/personal/hn229628_alunos_unisanta_br/Documents/Programa%C3%A7%C3%A3o/SABERLINK/SaberLink%20Img.PNG?csf=1&web=1&e=2eZdL7&CID=0a128bc5-cdea-41c6-8e81-4992e5c6457b" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2.5rem;">
+        <a class="navbar-brand" href="#">SaberLink</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -85,14 +69,14 @@ use App\Http\Controllers\HomeController;
     
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
+        {{-- <div class="container">
             <p>&copy; {{ date('Y') }} SaberLink. Todos os direitos reservados.</p>
-        </div>
+        </div> --}}
+
+        <p>&copy; {{ date('Y') }} Todos os direitos reservados - SaberLink</p>
+    <img src="https://unisantabr-my.sharepoint.com/personal/hn229628_alunos_unisanta_br/Documents/Programa%C3%A7%C3%A3o/SABERLINK/SaberLink%20Img.PNG?csf=1&web=1&e=2eZdL7&CID=0a128bc5-cdea-41c6-8e81-4992e5c6457b" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2rem;"><i class="fa-brands fa-laravel pt-2" style="height:auto; width: 2rem;"></i>
     </footer>
 
-    <!-- JavaScript do Bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!--<script src="{/{ asset('js/bootstrap.min.js') }}"></script>-->
+    
 </body>
 </html>

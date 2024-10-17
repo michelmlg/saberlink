@@ -2,13 +2,35 @@
     <x-slot:pageTitle>
         Home
     </x-slot:pageTitle>
+    <!-- Styles customizados -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero-section {
+            background-image: url('/images/hero-bg.jpg');
+            background-size: cover;
+            padding: 80px 0;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        .cta-button {
+            background-color: #ff5733;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
+        
+    </style>
 <!-- Seção Hero (Destaque Publicitário) -->
     <section class="hero-section">
         <div class="container">
             <h2>Ofertas Imperdíveis Esperam Por Você!</h2>
             <p>Aproveite cursos, e-books, e promoções exclusivas que vão transformar seu aprendizado.</p>
-            <a href="/ofertas" class="cta-button">Veja Nossas Ofertas</a>
+            <a href="/ofertas" class="mt-4 cta-button">Veja Nossas Ofertas</a>
         </div>
     </section>
 
