@@ -5,106 +5,158 @@
     <!-- Styles customizados -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
         }
-        .hero-section {
-            background-image: url('/images/hero-bg.jpg');
-            background-size: cover;
-            padding: 80px 0;
-            color: rgb(0, 0, 0);
+        .header {
+            background: linear-gradient(90deg, #01438a, #28a745);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .header p {
+            font-size: 1.25rem;
+            margin-top: 20px;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+            padding: 15px 30px;
+            font-size: 1.25rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        .features {
+            padding: 60px 0;
+        }
+        .features h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature i {
+            font-size: 3rem;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            font-size: 1.15rem;
+            color: #6c757d;
+        }
+        .testimonials {
+            background-color: #f1f1f1;
+            padding: 60px 0;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial {
             text-align: center;
         }
-        .cta-button {
-            background-color: #ff5733;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
         }
-
-        
+        .testimonial strong {
+            display: block;
+            margin-top: 10px;
+        }
+        .cta {
+            background: linear-gradient(90deg, #01438a, #28a745);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
     </style>
-<!-- Seção Hero (Destaque Publicitário) -->
-    <section class="hero-section">
-        <div class="container">
-            <h2>Ofertas Imperdíveis Esperam Por Você!</h2>
-            <p>Aproveite cursos, e-books, e promoções exclusivas que vão transformar seu aprendizado.</p>
-            <a href="/ofertas" class="mt-4 cta-button">Veja Nossas Ofertas</a>
+<!-- Header -->
+    <div class="header">
+        <h1>Crie Iscas Digitais Poderosas e Atraia Clientes Ideais</h1>
+        <p>Transforme seu conteúdo em uma máquina de gerar leads. Rápido, fácil e com resultados comprovados.</p>
+        <a href="#features" class="btn btn-primary mt-4">Saiba Mais</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container features" id="features">
+        <h2>Por que Escolher Nossa Plataforma?</h2>
+        <div class="row">
+            <div class="col-md-4 feature">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Fácil de Usar</h3>
+                <p>Sem complicações. Crie iscas digitais em minutos, sem precisar ser um especialista em design ou marketing.</p>
+            </div>
+            <div class="col-md-4 feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Alta Conversão</h3>
+                <p>Nossas ferramentas são projetadas para maximizar suas conversões e transformar visitantes em leads.</p>
+            </div>
+            <div class="col-md-4 feature">
+                <i class="fas fa-user-check"></i>
+                <h3>Comprovado por Especialistas</h3>
+                <p>Centenas de empreendedores e profissionais de marketing já usaram nossa plataforma com sucesso.</p>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Seção de Produtos ou Serviços em Destaque -->
-    <section class="my-5">
+    <!-- Testimonials Section -->
+    <div class="testimonials">
         <div class="container">
-            <h2 class="text-center mb-4">Destaques da Semana</h2>
+            <h2 class="text-center">O que nossos clientes dizem</h2>
             <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="/images/curso.jpg" class="card-img-top" alt="Curso Online">
-                        <div class="card-body">
-                            <h5 class="card-title">Curso de Marketing Digital</h5>
-                            <p class="card-text">Aprenda estratégias de marketing que alavancam o seu negócio.</p>
-                            <a href="/produto/1" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                <div class="col-md-4 testimonial">
+                    <p>"A plataforma revolucionou minhas campanhas de marketing. Aumentei minhas conversões em 50%!"</p>
+                    <strong>- João Silva</strong>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="/images/ebook.jpg" class="card-img-top" alt="E-book">
-                        <div class="card-body">
-                            <h5 class="card-title">E-book: Transforme sua Carreira</h5>
-                            <p class="card-text">Dicas essenciais para avançar profissionalmente.</p>
-                            <a href="/produto/2" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                <div class="col-md-4 testimonial">
+                    <p>"Simples de usar e os resultados são incríveis. Meus ebooks agora capturam muito mais leads."</p>
+                    <strong>- Maria Fernandes</strong>
                 </div>
-
-                <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="/images/ferramenta.jpg" class="card-img-top" alt="Ferramenta Digital">
-                        <div class="card-body">
-                            <h5 class="card-title">Ferramenta de Gestão de Tempo</h5>
-                            <p class="card-text">Otimize sua produtividade com nossa ferramenta exclusiva.</p>
-                            <a href="/produto/3" class="btn btn-primary">Saiba Mais</a>
-                        </div>
-                    </div>
+                <div class="col-md-4 testimonial">
+                    <p>"Recomendo para qualquer pessoa que queira escalar seu negócio com iscas digitais de alta qualidade."</p>
+                    <strong>- Carlos Souza</strong>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Seção de Prova Social (Depoimentos) -->
-    <section class="testimonials">
-        <div class="container text-center">
-            <h2>O Que Nossos Clientes Dizem</h2>
-            <p class="lead">Mais de 20.000 pessoas já utilizaram nossos produtos para alcançar resultados reais. Veja o que elas estão dizendo:</p>
-            <div class="row">
-                <div class="col-md-4">
-                    <p class="testimonial">"Este curso mudou minha vida profissional! Aprendi mais em 3 meses do que em anos de prática."</p>
-                    <p class="testimonial-author">- João Silva</p>
-                </div>
-                <div class="col-md-4">
-                    <p class="testimonial">"O e-book é completo e repleto de insights valiosos. Recomendo para todos os profissionais."</p>
-                    <p class="testimonial-author">- Maria Fernandes</p>
-                </div>
-                <div class="col-md-4">
-                    <p class="testimonial">"Com a ferramenta de produtividade, consegui dobrar minha eficiência no trabalho em poucas semanas!"</p>
-                    <p class="testimonial-author">- Paulo Costa</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Call to Action Section -->
+    <div class="cta">
+        <h2>Pronto para Começar?</h2>
+        <p>Crie sua primeira isca digital em minutos e veja o impacto no seu negócio. Não perca mais tempo.</p>
+        <a href="#signup" class="btn btn-primary">Experimente Gratuitamente</a>
+    </div>
 
-    <!-- Seção de Call to Action -->
-    <section class="bg-primary text-white py-5 text-center">
-        <h2>Não perca tempo!</h2>
-        <p>Acesse agora e aproveite as promoções antes que acabem.</p>
-        <a href="/cadastro" class="cta-button">Cadastre-se Gratuitamente</a>
-    </section>
+
+
+
 
 </x-layout.default>

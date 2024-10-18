@@ -61,6 +61,12 @@ Route::post('/logout', [UserAuthenticationController::class, 'logout'])
 Route::get('/user/bait-control', function () {
     return view('user.bait-control');
 });
+Route::get('/user/page', function () {
+    return view('bait.page');
+});
+
+
+
 
 
 // Rotas das Iscas

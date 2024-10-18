@@ -69,7 +69,7 @@
         <div class="hero-section"></div>
         <div class="overlay"></div> <!-- Adicionando o overlay -->
 
-        <div class="card-container">
+        <div class="card-container ms-5">
             <div class="card">
                 <div class="card-title fw-bold text-center"><h2>Login</h2></div> <!-- Removido <b> -->
 
@@ -86,7 +86,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fw-bold">Senha</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha">
+                        <input type="password" class="form-control" name="email" id="password" placeholder="Digite sua senha">
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mb-4 mt-4">Entrar</button>
                 </form>

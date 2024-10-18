@@ -103,7 +103,7 @@
   </style>
 
   <div class="reset-section">
-    <img src="/image/SaberLink Img.PNG" class="Logo"> <!-- Logo acima da caixa -->
+    <img src="{{asset('images/logoSl.png')}}" class="Logo"> <!-- Logo acima da caixa -->
     <div class="reset-box">
       <h2>Esqueci Minha Senha</h2>
       <form>

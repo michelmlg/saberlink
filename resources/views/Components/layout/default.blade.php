@@ -69,7 +69,7 @@ use App\Http\Controllers\HomeController;
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <li>
-                            <a class="dropdown-item" href="/gestao-iscas">
+                            <a class="dropdown-item" href="/user/bait-control">
                                 <i class="fas fa-fish"></i> Gestão de Iscas Digitais
                             </a>
                         </li>
