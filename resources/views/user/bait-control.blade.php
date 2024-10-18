@@ -133,7 +133,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="createBaitForm" method="POST" action="{{ route('baits.store') }}" enctype="multipart/form-data">
+          <form id="createBaitForm" method="POST" action="{{ route('userBaits.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="nm_title" class="form-label">Título</label>

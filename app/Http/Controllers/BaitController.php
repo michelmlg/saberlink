@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bait;
+use App\Models\BaitCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BaitController extends Controller
 {
+    // Função para listar todas as iscas
+    public function index()
+    {
+        $baits = Bait::all() ?? []; // Obtém todas as iscas do banco de dados
+        $categories = BaitCategory::all() ?? [];
+        return view('user.bait-control', compact('baits', 'categories')); // Passa as iscas para a view
+    }
+
     // Função para armazenar uma nova isca
     public function store(Request $request)
     {
@@ -31,7 +41,10 @@ class BaitController extends Controller
             $fileBase64 = base64_encode(file_get_contents($file->path()));  // Converte o arquivo para Base64
         }
 
-        // Criando a isca
+        // Obter o ID do usuário autenticado
+        $userId = auth()->id(); // ou Auth::id();
+
+        // Criando a isca com o id do usuário autenticado
         Bait::create([
             'nm_title' => $request->input('nm_title'),
             'ds_bait' => $request->input('ds_bait'),
@@ -40,6 +53,7 @@ class BaitController extends Controller
             'img_path' => $imgPath,  // Armazena o caminho da imagem
             'file_base64' => $fileBase64,  // Armazena o arquivo em Base64
             'nm_slug' => $request->input('nm_slug'),
+            'id_user' => $userId,  // Captura o ID do usuário logado
             'dt_creation' => now(),
         ]);
 
@@ -80,5 +94,19 @@ class BaitController extends Controller
         ]);
 
         return redirect()->route('baits.index')->with('success', 'Bait atualizado com sucesso!');
+    }
+
+    // Função para deletar uma isca
+    public function destroy(Bait $bait)
+    {
+        $bait->delete(); // Deleta a isca
+        return redirect()->route('baits.index')->with('success', 'Bait deletado com sucesso!');
+    }
+
+    // Função para exibir o formulário de edição de uma isca
+    public function edit(Bait $bait)
+    {
+        $categories = BaitCategory::all(); // Obtém todas as categorias
+        return view('bait.edit', compact('bait', 'categories')); // Passa a isca e categorias para a view
     }
 }
