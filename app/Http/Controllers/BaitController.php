@@ -6,6 +6,8 @@ use App\Models\Bait;
 use App\Models\BaitCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
+use DB;
 
 class BaitController extends Controller
 {
@@ -42,8 +44,13 @@ class BaitController extends Controller
         }
 
         // Obter o ID do usuário autenticado
-        $userId = auth()->id(); // ou Auth::id();
-
+        //$userId = auth()->id(); // ou Auth::id();
+        $sessionId = Session::getId();
+        $userId = DB::table('sessions')
+            ->where('id', $sessionId)  // Assuming you have the session ID
+            ->value('user_id');
+        
+       
         // Criando a isca com o id do usuário autenticado
         Bait::create([
             'nm_title' => $request->input('nm_title'),
@@ -53,8 +60,8 @@ class BaitController extends Controller
             'img_path' => $imgPath,  // Armazena o caminho da imagem
             'file_base64' => $fileBase64,  // Armazena o arquivo em Base64
             'nm_slug' => $request->input('nm_slug'),
-            'id_user' => $userId,  // Captura o ID do usuário logado
             'dt_creation' => now(),
+            'id_user' => Auth::user()->id,    // Captura o ID do usuário logado
         ]);
 
         return redirect()->route('baits.index')->with('success', 'Bait criado com sucesso!');
