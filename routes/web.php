@@ -71,17 +71,9 @@ Route::get('/user/page', function () {
 
 // Rotas das Iscas
 
-// GET /baits – Listar todas as iscas (chama o método index).
-// GET /baits/create – Exibir formulário para criar uma nova isca (chama o método create).
-// POST /baits – Armazenar uma nova isca (chama o método store).
-// GET /baits/{id} – Exibir uma isca específica (chama o método show).
-// GET /baits/{id}/edit – Exibir formulário de edição de uma isca (chama o método edit).
-// PUT /baits/{id} – Atualizar uma isca existente (chama o método update).
-// DELETE /baits/{id} – Deletar uma isca (chama o método destroy).
-
-// o resource gera automaticamente todas as rotas para o CRUD de iscas (baits).
-// Rotas das Iscas
 Route::resource('baits', BaitController::class);
+Route::get('/bait-control', [BaitCategoryController::class, 'index'])->name('bait.control');
+
 Route::get('/baits/create', [BaitCategoryController::class, 'create'])->name('baits.create'); // Para exibir o formulário de criação
 Route::post('/baits', [BaitCategoryController::class, 'store'])->name('baits.store'); // Para armazenar a nova isca
 

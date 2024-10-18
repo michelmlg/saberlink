@@ -12,7 +12,7 @@ class BaitCategoryController extends Controller
     public function index()
     {
         $categories = BaitCategory::all(); // Obtém todas as categorias
-        return view('your-view-file', compact('categories')); // Substitua 'your-view-file' pelo arquivo de sua view
+        return view('user.bait-control', compact('categories')); 
     }
 
     // Função para exibir o formulário de criação de uma nova isca
