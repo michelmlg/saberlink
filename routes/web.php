@@ -75,3 +75,8 @@ Route::prefix('user')->group(function () {
     Route::get('/bait-control', [BaitController::class, 'index'])->name('userBaits.control');
     Route::post('/bait-control', [BaitController::class, 'store'])->name('userBaits.store'); 
 });
+
+
+Route::get('/markdigital', function () {
+    return view('bait.page');
+})->name('bait.page');

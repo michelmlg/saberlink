@@ -133,7 +133,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="createBaitForm" method="POST" action="{{ route('userBaits.store') }}" enctype="multipart/form-data">
+          {{-- <form id="createBaitForm" method="POST" action="{{ route('b') }}" enctype="multipart/form-data"> --}}
+          <form id="createBaitForm">
             @csrf
             <div class="mb-3">
                 <label for="nm_title" class="form-label">Título</label>
@@ -168,7 +169,8 @@
                 <label for="file_base64" class="form-label">Anexar Produto (Arquivo)</label>
                 <input type="file" class="form-control" id="file_base64" name="file">
             </div>
-            <button type="submit" class="btn btn-success">Criar Isca</button>
+            {{-- <button type="submit" class="btn btn-success">Criar Isca</button> --}}
+            <a class="btn btn-success" href="{{ route('bait.page') }}">Criar</a>
         </form>
         
         
