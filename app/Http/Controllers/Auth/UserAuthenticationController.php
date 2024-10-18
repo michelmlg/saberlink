@@ -33,7 +33,7 @@ class UserAuthenticationController extends Controller
 
         Auth::login($user);
 
-       return redirect()->route('destaques'); // Redireciona após o registro
+       return redirect()->route('home'); // Redireciona após o registro
     }
 
     // Exibe o formulário de login

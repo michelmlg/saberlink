@@ -8,7 +8,7 @@ use App\Http\Controllers\BaitController;
 // ROTAS PÁGINAS ESTÁTICAS
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 Route::get('/destaques', function () {
     return view('destaques');
 })->name('destaques');
@@ -58,6 +58,7 @@ Route::post('/logout', [UserAuthenticationController::class, 'logout'])
 
 
 // Rotas do Usuário
+<<<<<<< HEAD
 Route::get('/user/bait-control', function () {
     return view('user.bait-control');
 });
@@ -65,18 +66,27 @@ Route::get('/user/page', function () {
     return view('bait.page');
 });
 
-Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
-Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
+
 
 
 
 
 
 // Rotas das Iscas
+=======
+// Route::get('/user/bait-control', function () {
+//     return view('user.bait-control');
+// });
+// Route::get('/user/page', function () {
+//     return view('bait.page');
+// });
+>>>>>>> refs/remotes/origin/main
 
+// Rotas para o BaitController
 Route::resource('baits', BaitController::class);
-Route::get('/bait-control', [BaitCategoryController::class, 'index'])->name('bait.control');
 
-Route::get('/baits/create', [BaitCategoryController::class, 'create'])->name('baits.create'); // Para exibir o formulário de criação
-Route::post('/baits', [BaitCategoryController::class, 'store'])->name('baits.store'); // Para armazenar a nova isca
-
+// Rotas para o BaitCategoryController
+Route::prefix('user')->group(function () {
+    Route::get('/bait-control', [BaitController::class, 'index'])->name('userBaits.control');
+    Route::post('/bait-control', [BaitController::class, 'store'])->name('userBaits.store'); 
+});
