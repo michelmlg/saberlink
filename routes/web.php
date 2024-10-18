@@ -56,31 +56,16 @@ Route::post('/logout', [UserAuthenticationController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
+    Route::get('/google/redirect', [App\Http\Controllers\GoogleLoginController::class, 'redirectToGoogle'])->name('google.redirect');
+Route::get('/google/callback', [App\Http\Controllers\GoogleLoginController::class, 'handleGoogleCallback'])->name('google.callback');
 
 // Rotas do Usuário
-<<<<<<< HEAD
-Route::get('/user/bait-control', function () {
-    return view('user.bait-control');
-});
-Route::get('/user/page', function () {
-    return view('bait.page');
-});
-
-
-
-
-
-
-
-// Rotas das Iscas
-=======
 // Route::get('/user/bait-control', function () {
 //     return view('user.bait-control');
 // });
 // Route::get('/user/page', function () {
 //     return view('bait.page');
 // });
->>>>>>> refs/remotes/origin/main
 
 // Rotas para o BaitController
 Route::resource('baits', BaitController::class);
