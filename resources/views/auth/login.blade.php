@@ -74,7 +74,11 @@
                 <div class="card-title fw-bold text-center"><h2>Login</h2></div> <!-- Removido <b> -->
 
                 <!-- Google Login Button -->
-                <a href="{{ route('google.redirect') }}" class="btn google-btn w-100 mb-3"><i class="fa-brands fa-google"></i> Login with Google </a>
+                <button  class="btn google-btn w-100 mb-3">
+                    <i class="fa-brands fa-google"></i>
+                    Login com Google
+                </button>
+                <a href="{{ route('google.redirect') }}" class="btn btn-primary"> Login with Google </a>
                 <form method="POST" action="{{route('login')}}">
                 @csrf
                     <div class="mb-3 mt-2">

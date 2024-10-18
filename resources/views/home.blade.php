@@ -152,7 +152,7 @@
     <div class="cta">
         <h2>Pronto para Começar?</h2>
         <p>Crie sua primeira isca digital em minutos e veja o impacto no seu negócio. Não perca mais tempo.</p>
-        <a href="/register" class="btn btn-primary">Experimente Gratuitamente</a>
+        <a href="#signup" class="btn btn-primary">Experimente Gratuitamente</a>
     </div>
 
 

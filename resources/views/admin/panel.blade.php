@@ -92,7 +92,7 @@
         <div class="admin-card">
           <h4>Manutenção de Iscas Digitais</h4>
           <p>Gerencie as iscas digitais disponíveis no site.</p>
-          <a href="/admin/baits" class="btn btn-primary">Acessar</a>
+          <a href="/adm-iscas.html" class="btn btn-primary">Acessar</a>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
         <div class="admin-card">
           <h4>Manutenção de Leads</h4>
           <p>Visualize e gerencie os leads capturados.</p>
-          <a href="/admin/leads" class="btn btn-primary">Acessar</a>
+          <a href="/adm-leeds.html" class="btn btn-primary">Acessar</a>
         </div>
       </div>
     </div>
