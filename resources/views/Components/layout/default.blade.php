@@ -21,25 +21,25 @@ use App\Http\Controllers\HomeController;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <!-- CSS Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="{/{asset('css/bootstrap.css')}}">-->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 
     <!-- Link Font-Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- JavaScript do Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-    <!--<script src="{/{ asset('js/bootstrap.min.js') }}"></script>-->
 
 </head>
 <body>
     <!-- Header da página -->
    <nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
-    <img src="https://unisantabr-my.sharepoint.com/:i:/g/personal/hn229628_alunos_unisanta_br/EWk4Xmwuu7xMqNGsWFFEHk4BebDAhuEelIL4cVzQ4EAo-g?e=i9evN3" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2.5rem;">
+    <img src="{{asset('images/logoSl.png')}}" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2.5rem;">
     <a class="navbar-brand" href="#">SaberLink</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,7 +124,7 @@ use App\Http\Controllers\HomeController;
         </div> --}}
 
         <p>&copy; {{ date('Y') }} Todos os direitos reservados - SaberLink</p>
-    <img src="https://unisantabr-my.sharepoint.com/:i:/g/personal/hn229628_alunos_unisanta_br/EWk4Xmwuu7xMqNGsWFFEHk4BebDAhuEelIL4cVzQ4EAo-g?e=i9evN3" style="height:auto; width: 2rem;"><i class="fa-brands fa-laravel pt-2" style="height:auto; width: 2rem;"></i>
+    <img src="{{asset('images/logoSl.png')}}" style="height:auto; width: 2rem;"><i class="fa-brands fa-laravel pt-2" style="height:auto; width: 2rem;"></i>
     </footer>
 
     
