@@ -112,8 +112,8 @@
           <div class="card-header">
             <h5 class="card-title">E-book de Marketing</h5>
             <div>
-              <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadEditCardData(2)">Editar</button>
-              <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal">Deletar</button>
+              <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal" onclick="loadEditCardData(1)"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
             </div>
           </div>
           <div class="card-body">
