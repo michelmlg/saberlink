@@ -80,9 +80,8 @@ Route::get('/user/page', function () {
 // DELETE /baits/{id} – Deletar uma isca (chama o método destroy).
 
 // o resource gera automaticamente todas as rotas para o CRUD de iscas (baits).
+// Rotas das Iscas
 Route::resource('baits', BaitController::class);
-
-Route::get('/baits/create', function () {
-    return view('bait.control');
-});
+Route::get('/baits/create', [BaitCategoryController::class, 'create'])->name('baits.create'); // Para exibir o formulário de criação
+Route::post('/baits', [BaitCategoryController::class, 'store'])->name('baits.store'); // Para armazenar a nova isca
 

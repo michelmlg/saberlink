@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class BaitCategory extends Model
 {
-    protected $table = 'tb_bait_categories'; // Tabela renomeada conforme a migration
-    protected $fillable = ['nm_category'];
+    use HasFactory;
 
-    public function baits()
-    {
-        return $this->hasMany(Bait::class, 'id_category');
-    }
+    // Especifique a tabela se o nome não seguir a convenção do Laravel
+    protected $table = 'tb_bait_categories';
+
+    // Defina os campos que podem ser preenchidos em massa
+    protected $fillable = ['nm_category'];
 }

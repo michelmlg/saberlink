@@ -133,33 +133,45 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="createBaitForm">
+          <form id="createBaitForm" method="POST" action="{{ route('baits.store') }}" enctype="multipart/form-data">
+            @csrf
             <div class="mb-3">
-              <label for="baitTitle" class="form-label">Título</label>
-              <input type="text" class="form-control" id="baitTitle" placeholder="Digite o título da isca">
+                <label for="nm_title" class="form-label">Título</label>
+                <input type="text" class="form-control" id="nm_title" name="nm_title" placeholder="Digite o título da isca" required>
             </div>
             <div class="mb-3">
-              <label for="baitDescription" class="form-label">Descrição</label>
-              <textarea class="form-control" id="baitDescription" rows="3" placeholder="Digite a descrição da isca"></textarea>
+                <label for="ds_bait" class="form-label">Descrição</label>
+                <textarea class="form-control" id="ds_bait" name="ds_bait" rows="3" placeholder="Digite a descrição da isca" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="id_category">Categoria</label>
+              <select name="id_category" class="form-control" required>
+                  <option value="">Selecione uma categoria</option>
+                  @foreach($categories as $category)
+                      <option value="{{ $category->id_category }}">{{ $category->nm_category }}</option>
+                  @endforeach
+              </select>
+          </div>
+            <div class="mb-3">
+                <label for="txt_body" class="form-label">Texto</label>
+                <textarea class="form-control" id="txt_body" name="txt_body" rows="5" placeholder="Digite o texto da isca" required></textarea>
             </div>
             <div class="mb-3">
-              <label for="baitText" class="form-label">Texto</label>
-              <textarea class="form-control" id="baitText" rows="5" placeholder="Digite o texto da isca"></textarea>
+                <label for="nm_slug" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="nm_slug" name="nm_slug" placeholder="Digite o slug da isca" required>
             </div>
             <div class="mb-3">
-              <label for="baitLink" class="form-label">Link - http://hackathon.milles.moe/ ...</label>
-              <input type="text" class="form-control" id="baitLink" placeholder="Digite a parte do link">
+                <label for="img_path" class="form-label">Anexar Imagem</label>
+                <input type="file" class="form-control" id="img_path" name="image" accept="image/*" onchange="previewCardImage(event, 'imagePreviewCard1')">
             </div>
             <div class="mb-3">
-              <label for="baitImage" class="form-label">Anexar Imagem</label>
-              <input type="file" class="form-control" id="baitImage" accept="image/*" onchange="previewCardImage(event, 'imagePreviewCard1')">
-            </div>
-            <div class="mb-3">
-              <label for="baitProduct" class="form-label">Anexar Produto</label>
-              <input type="file" class="form-control" id="baitProduct">
+                <label for="file_base64" class="form-label">Anexar Produto (Arquivo)</label>
+                <input type="file" class="form-control" id="file_base64" name="file">
             </div>
             <button type="submit" class="btn btn-success">Criar Isca</button>
-          </form>
+        </form>
+        
+        
         </div>
       </div>
     </div>
@@ -221,5 +233,17 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function previewCardImage(event, previewElementId) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var output = document.getElementById(previewElementId);
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+  </script>
   
 </x-layout.default>
