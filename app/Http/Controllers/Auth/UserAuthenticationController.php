@@ -22,7 +22,7 @@ class UserAuthenticationController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
 
         $user = User::create([
@@ -33,7 +33,7 @@ class UserAuthenticationController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('dashboard'); // Redireciona após o registro
+       return redirect()->route('destaques'); // Redireciona após o registro
     }
 
     // Exibe o formulário de login
@@ -49,7 +49,7 @@ class UserAuthenticationController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Autenticação bem-sucedida
-            return redirect()->intended('dashboard');
+            return redirect()->intended('destaques');
         }
 
         return back()->withErrors([

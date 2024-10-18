@@ -65,25 +65,96 @@
   <!-- Main Container -->
   <div class="container admin-container">
 
+  <h3 class="text-center mb-4">Lista de Usuários</h3>
+
     <!-- Botão Voltar -->
     <div class="mb-3">
       <a href="/admin/panel" class="btn btn-secondary">Voltar para o Menu</a>
+      <!-- Botões de Ações (Criar, Alterar, Deletar) -->
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">Criar Usuário</button>
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal">Alterar Usuário</button>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Deletar Usuário</button>
+  
     </div>
 
-    <!-- Caixa de Deleção de Usuário -->
-    <div class="delete-box">
-      <h5>Deletar Usuário</h5>
-      <form id="deleteUserForm">
-        <div class="mb-3">
-          <label for="userId" class="form-label">ID do Usuário</label>
-          <input type="text" class="form-control" id="userId" placeholder="Digite a chave primária do usuário">
+    <!-- Modal para Criar Usuário -->
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createModalLabel">Criar Novo Usuário</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="createUserForm">
+              <div class="mb-3">
+                <label for="userName" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="userName" placeholder="Digite o nome do usuário">
+              </div>
+              <div class="mb-3">
+                <label for="userEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Digite o email do usuário">
+              </div>
+              <button type="submit" class="btn btn-success">Criar Usuário</button>
+            </form>
+          </div>
         </div>
-        <button type="submit" class="btn btn-danger">Deletar Usuário</button>
-      </form>
+      </div>
     </div>
+
+
+    <!-- Modal para Alterar Usuário -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="updateModalLabel">Alterar Usuário</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateUserForm">
+              <div class="mb-3">
+                <label for="updateUserId" class="form-label">ID do Usuário</label>
+                <input type="text" class="form-control" id="updateUserId" placeholder="Digite a chave primária do usuário">
+              </div>
+              <div class="mb-3">
+                <label for="updateUserName" class="form-label">Novo Nome</label>
+                <input type="text" class="form-control" id="updateUserName" placeholder="Digite o novo nome do usuário">
+              </div>
+              <div class="mb-3">
+                <label for="updateUserEmail" class="form-label">Novo Email</label>
+                <input type="email" class="form-control" id="updateUserEmail" placeholder="Digite o novo email do usuário">
+              </div>
+              <button type="submit" class="btn btn-warning">Alterar Usuário</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Deletar Usuário -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Deletar Usuário</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="deleteUserForm">
+              <div class="mb-3">
+                <label for="userId" class="form-label">ID do Usuário</label>
+                <input type="text" class="form-control" id="userId" placeholder="Digite a chave primária do usuário">
+              </div>
+              <button type="submit" class="btn btn-danger">Deletar Usuário</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Tabela de Usuários -->
-    <h3 class="text-center mb-4">Lista de Usuários</h3>
     <table id="userTable" class="table table-bordered table-striped">
       <thead>
         <tr>

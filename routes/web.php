@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 Route::get('/destaques', function () {
     return view('destaques');
-});
+})->name('destaques');
 
 Route::get('/sobre', function () {
     return view('sobre');
@@ -55,6 +55,12 @@ Route::post('/login', [UserAuthenticationController::class, 'login'])
 Route::post('/logout', [UserAuthenticationController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
+
+// Rotas do Usuário
+Route::get('/user/bait-control', function () {
+    return view('user.bait-control');
+});
 
 
 // Rotas das Iscas

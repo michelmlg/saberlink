@@ -64,6 +64,8 @@
         }
     </style>
 
+    
+
     <div class="container-fluid position-relative">
         <div class="hero-section"></div>
         <div class="overlay"></div> <!-- Adicionando o overlay -->

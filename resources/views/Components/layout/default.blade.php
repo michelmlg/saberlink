@@ -38,14 +38,16 @@ use App\Http\Controllers\HomeController;
 </head>
 <body>
     <!-- Header da página -->
-    <nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
-        <img src="https://unisantabr-my.sharepoint.com/personal/hn229628_alunos_unisanta_br/Documents/Programa%C3%A7%C3%A3o/SABERLINK/SaberLink%20Img.PNG?csf=1&web=1&e=2eZdL7&CID=0a128bc5-cdea-41c6-8e81-4992e5c6457b" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2.5rem;">
-        <a class="navbar-brand" href="#">SaberLink</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+   <nav class="navbar navbar-expand-lg p-3 navbar-dark bg-dark">
+    <img src="https://unisantabr-my.sharepoint.com/:i:/g/personal/hn229628_alunos_unisanta_br/EWk4Xmwuu7xMqNGsWFFEHk4BebDAhuEelIL4cVzQ4EAo-g?e=i9evN3" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2.5rem;">
+    <a class="navbar-brand" href="#">SaberLink</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
             <li class="nav-item">
                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             </li>
@@ -55,15 +57,63 @@ use App\Http\Controllers\HomeController;
             <li class="nav-item">
                 <x-nav-link href="/sobre" :active="request()->is('sobre')">Sobre</x-nav-link>
             </li>
-            <li>
-                <x-nav-link href="/login" :active="request()->is('login')">Login</x-nav-link>
-            </li>
-            <li>
-                <x-nav-link href="/register" :active="request()->is('register')">Registrar</x-nav-link>
-            </li>
-            </ul>
-        </div>
-        </nav>
+        </ul>
+
+        <ul class="navbar-nav ms-auto">
+            <!-- Verifica se o usuário está autenticado -->
+            @auth
+                <!-- Menu dropdown para usuários logados -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user"></i> {{ Auth::user()->name }} <!-- Exibe o nome do usuário -->
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li>
+                            <a class="dropdown-item" href="/gestao-iscas">
+                                <i class="fas fa-fish"></i> Gestão de Iscas Digitais
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/perfil">
+                                <i class="fas fa-user-cog"></i> Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="dropdown-item" type="submit">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            @else
+                <!-- Links de Login e Registro para usuários não logados -->
+                <li class="nav-item">
+                    <x-nav-link href="/login" :active="request()->is('login')">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </x-nav-link>
+                </li>
+                <li class="nav-item">
+                    <x-nav-link href="/register" :active="request()->is('register')">
+                        <i class="fas fa-user-plus"></i> Registrar
+                    </x-nav-link>
+                </li>
+            @endauth
+        </ul>
+    </div>
+</nav>
+
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
     {{$slot}}
     
@@ -74,7 +124,7 @@ use App\Http\Controllers\HomeController;
         </div> --}}
 
         <p>&copy; {{ date('Y') }} Todos os direitos reservados - SaberLink</p>
-    <img src="https://unisantabr-my.sharepoint.com/personal/hn229628_alunos_unisanta_br/Documents/Programa%C3%A7%C3%A3o/SABERLINK/SaberLink%20Img.PNG?csf=1&web=1&e=2eZdL7&CID=0a128bc5-cdea-41c6-8e81-4992e5c6457b" alt="Logo da SaberLink" class="logo" style="height:auto; width: 2rem;"><i class="fa-brands fa-laravel pt-2" style="height:auto; width: 2rem;"></i>
+    <img src="https://unisantabr-my.sharepoint.com/:i:/g/personal/hn229628_alunos_unisanta_br/EWk4Xmwuu7xMqNGsWFFEHk4BebDAhuEelIL4cVzQ4EAo-g?e=i9evN3" style="height:auto; width: 2rem;"><i class="fa-brands fa-laravel pt-2" style="height:auto; width: 2rem;"></i>
     </footer>
 
     

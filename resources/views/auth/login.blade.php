@@ -78,14 +78,15 @@
                     <i class="fa-brands fa-google"></i>
                     Login com Google
                 </button>
-                <form>
+                <form method="POST" action="{{route('login')}}">
+                @csrf
                     <div class="mb-3 mt-2">
                         <label for="email" class="form-label fw-bold">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                        <input type="email" class="form-control"  name="email" id="email" placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label fw-bold">Senha</label>
-                        <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha">
                     </div>
                     <button type="submit" class="btn btn-primary w-100 mb-4 mt-4">Entrar</button>
                 </form>
